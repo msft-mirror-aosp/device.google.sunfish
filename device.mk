@@ -37,7 +37,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Include sensors soong namespace
 PRODUCT_SOONG_NAMESPACES += \
-    vendor/qcom/sensors
+    vendor/qcom/sensors \
+    vendor/google/tools/sensors
 
 # Single vendor RIL/Telephony/data with SM7250
 DEVICE_USES_SM7250_QCRIL_TELEPHONY := true
@@ -155,6 +156,11 @@ PRODUCT_PACKAGES += \
     cppreopts.sh \
     update_engine \
     update_verifier
+
+PRODUCT_PACKAGES += \
+    e2fsck_ramdisk \
+    tune2fs_ramdisk \
+    resize2fs_ramdisk
 
 # Use Sdcardfs
 PRODUCT_PRODUCT_PROPERTIES += \

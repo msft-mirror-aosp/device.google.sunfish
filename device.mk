@@ -54,8 +54,8 @@ ifeq ($(DEVICE_USES_SM7250_QCRIL_TELEPHONY), true)
       vendor/qcom/sm7250/proprietary/commonsys/telephony-apps/xdivert \
       vendor/qcom/sm7250/proprietary/qcril-data-hal \
       vendor/qcom/sm7250/proprietary/qcril-hal \
-      vendor/qcom/sm8150/proprietary/data/permissions
-else
+      vendor/qcom/sm7250/proprietary/data
+  else
   $(warning DEVICE_USES_SM7250_QCRIL_TELEPHONY is disabled)
 
   PRODUCT_SOONG_NAMESPACES += \
@@ -545,10 +545,6 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@2.0-impl-qti \
     android.hardware.gnss@2.0-service-qti
 
-# Wireless Charger HAL
-PRODUCT_PACKAGES += \
-    vendor.google.wireless_charger@1.0
-
 ENABLE_VENDOR_RIL_SERVICE := true
 
 HOSTAPD := hostapd
@@ -866,7 +862,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=11
+	ro.vendor.build.svn=15
 
 # ZRAM writeback
 PRODUCT_PROPERTY_OVERRIDES += \

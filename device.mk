@@ -865,7 +865,7 @@ PRODUCT_PACKAGES += $(HIDL_WRAPPER)
 
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.vendor.build.svn=17
+	ro.vendor.build.svn=18
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
@@ -907,6 +907,9 @@ include hardware/google/pixel/common/pixel-common-device.mk
 
 # thermal
 -include hardware/google/pixel/thermal/device.mk
+
+# Pixel Logger
+include hardware/google/pixel/PixelLogger/PixelLogger.mk
 
 # enable retrofit virtual A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota_retrofit.mk)
